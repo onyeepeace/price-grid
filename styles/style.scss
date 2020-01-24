@@ -1,0 +1,150 @@
+// Colors
+$cardTwo: #2ab2af;
+$yellow: hsl(71, 73%, 54%);
+$lightGray: hsl(204, 43%, 93%);
+$grayishBlue: hsl(218, 22%, 67%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    width: 85%;
+    margin: 60px auto;
+    font-family: 'Karla', sans-serif;
+    background-color: rgb(240, 250, 252);
+}
+
+.cards {
+    box-shadow: 5px 8px 10px rgba(168, 161, 161, 0.5);
+}
+
+.cards > div {
+    padding: 30px;
+}
+
+.first {
+    background-color: #ffffff;
+    h1 {
+        color: $cardTwo;
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+    .cash {
+        color: $yellow;
+        font-weight: 700;
+        padding-bottom: 20px;
+    }
+    .info {
+        color: $grayishBlue;
+        font-size: 15px;
+        line-height: 2rem;
+    }
+}
+
+.second {
+    background-color: $cardTwo;
+    color: #ffffff;
+    h1 {
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+    .price {
+        display: flex;
+        font-size: 32px;
+        font-weight: 700;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    span {
+        font-weight: 400;
+        font-size: 16px;
+        opacity: 0.5;
+        padding-left: 15px;
+    }
+    a {
+        display: inline-block;
+        width: 100%;
+        padding: 15px 0;
+        margin-top: 30px;
+        text-decoration: none;
+        color: #ffffff;
+        text-align: center;
+        font-weight: 700;
+        background-color: $yellow;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 2px 3px 4px rgba(119, 114, 114, 0.5);
+        &:hover {
+            background-color: #ffffff;
+            color: $yellow;
+        }
+    }
+}
+
+.third {
+    background-color: #2bbfbd;
+    color: #ffffff;
+    h1 {
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+    ul {
+        list-style: none;
+    }
+    li {
+        font-size: $lightGray;
+        opacity: 0.7;
+        font-size: 14px;
+        line-height: 1.5rem;
+    }
+}
+
+@media screen and (min-width:760px) {
+    body {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "first first"
+        "second third";
+        border-radius: 9px;
+        overflow: hidden;
+        box-shadow: 5px 5px 20px rgba(177, 171, 171, 0.5);
+    }
+
+    .first {
+        grid-area: first;
+    }
+
+    .second {
+        grid-area: second;
+    }
+
+    .third {
+        grid-area: third;
+    }
+}
+
+@media screen and (min-width:1400px) {
+    body {
+        width: 55%;
+    }
+}
